@@ -1,0 +1,39 @@
+{
+  "name": "pdf-generator",
+  "version": "1.0.0",
+  "description": "Lambda that generates PDFs dynamically, based on a template and given certain parameters",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-local": "sls offline --stage local",
+    "deploy-prod": "sls deploy --stage prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myriampuchaltgisep/pdfGenerator.git"
+  },
+  "author": "Myriam Puchalt <myriam.puchalt@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/myriampuchaltgisep/pdfGenerator/issues"
+  },
+  "homepage": "https://github.com/myriampuchaltgisep/pdfGenerator#readme",
+  "dependencies": {
+    "handlebars": "^4.7.7",
+    "puppeteer-core": "^10.2.0",
+    "source-map-support": "^0.5.19",
+    "web-vitals": "^2.1.0"
+  },
+  "devDependencies": {
+    "chrome-aws-lambda": "^10.1.0",
+    "copy-webpack-plugin": "^9.0.1",
+    "puppeteer": "^10.2.0",
+    "serverless": "^2.53.0",
+    "serverless-offline": "^8.0.0",
+    "serverless-prune-plugin": "^1.5.1",
+    "serverless-webpack": "^5.5.1",
+    "webpack": "^5.48.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-node-externals": "^3.0.0"
+  }
+}

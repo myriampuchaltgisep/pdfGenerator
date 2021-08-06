@@ -1,0 +1,36 @@
+service:
+  name: pdf-generator
+
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+  - serverless-prune-plugin
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  profile: personal
+  region: ${opt:region, 'us-west-2'}
+  endpointType: REGIONAL
+  stage: ${opt:stage, 'dev'}
+  logs:
+    restApi: true
+  apiGateway:
+    binaryMediaTypes:
+      - "*/*"
+  environment:
+    AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
+
+functions:
+  generatePDF:
+    handler: index.generatePDF
+    memorySize: 1024
+    events:
+      - http:
+          method: get
+          path: /generatePDF
